@@ -1,0 +1,26 @@
+{
+  "name": "Roban Insight",
+  "version": "1.0.0",
+  "description": "Data Unlocked, Insights Revealed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Yves Liebert",
+    "url": "https://git.io/yvesliebert"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "base64-to-image": "^1.0.2",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.8",
+    "express": "^4.21.2",
+    "node-fetch": "^2.7.0",
+    "node-telegram-bot-api": "^0.60.0"
+  }
+}
