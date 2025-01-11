@@ -36,7 +36,7 @@ console.log("\x1b[32m%s\x1b[0m", `
   ██║░░██║╚█████╔╝██████╦╝██║░░██║██║░╚███║  ██║██║░╚███║██████╔╝██║╚██████╔╝██║░░██║░░░██║░░░ 
   ╚═╝░░╚═╝░╚════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝  ╚═╝╚═╝░░╚══╝╚═════╝░╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░  
                                                                                                  
-                                Author: Yves Liebert (a.k.a Roban Ins)                           
+                                Author: Yves Liebert (a.k.a Rafi)                           
                                                                                                   
                     Description: Tool for tracking, hacking cameras, and gathering               
                     device and location information from a victim using simple links.            
